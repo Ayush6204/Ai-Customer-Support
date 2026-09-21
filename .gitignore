@@ -1,0 +1,351 @@
+# =========================================================
+# FULL-STACK RAG PROJECT .gitignore
+# Backend: FastAPI + LangChain + ChromaDB + SQLite + RAGAS
+# Frontend: React + Vite + Tailwind CSS + Material UI
+# =========================================================
+
+
+# =========================================================
+# ENVIRONMENT VARIABLES / SECRETS
+# =========================================================
+
+.env
+.env.*
+!.env.example
+
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# API keys / local secrets
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+
+# =========================================================
+# PYTHON / FASTAPI BACKEND
+# =========================================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+venv/
+env/
+.venv/
+ENV/
+backend/venv/
+backend/env/
+backend/.venv/
+
+# Python package/build output
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Python tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+coverage/
+htmlcov/
+
+# Python logs
+*.log
+logs/
+backend/logs/
+
+
+# =========================================================
+# DATABASE FILES
+# =========================================================
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+
+# Local DB backups
+*.db-journal
+*.sqlite-journal
+*.sqlite3-journal
+
+# Optional database dumps
+*.dump
+*.sql
+
+
+# =========================================================
+# USER UPLOADS / DOCUMENT FILES
+# =========================================================
+
+# Uploaded user documents should never go to GitHub
+uploads/
+backend/uploads/
+
+# Common uploaded document/data formats
+*.pdf
+*.docx
+*.doc
+*.txt
+*.csv
+*.xlsx
+*.xls
+
+# Keep project documentation if needed
+!README.md
+!backend/README.md
+!frontend/README.md
+
+# Keep sample evaluation dataset if you intentionally want it
+!backend/app/evaluation/datasets/*.json
+
+
+# =========================================================
+# CHROMADB / VECTOR DATABASE
+# =========================================================
+
+chroma_db/
+backend/chroma_db/
+
+# Other possible vector DB folders
+vector_db/
+backend/vector_db/
+.chroma/
+backend/.chroma/
+
+
+# =========================================================
+# RAGAS / EVALUATION OUTPUTS
+# =========================================================
+
+# Generated RAGAS reports
+backend/app/evaluation/*.csv
+backend/app/evaluation/*_report.json
+backend/app/evaluation/ragas_results.json
+
+# Keep evaluator scripts
+!backend/app/evaluation/*.py
+!backend/app/evaluation/__init__.py
+
+# Optional generated evaluation exports
+backend/app/evaluation/reports/
+backend/app/evaluation/results/
+backend/app/evaluation/outputs/
+
+
+# =========================================================
+# ALEMBIC / MIGRATIONS
+# =========================================================
+
+# Keep Alembic configuration and structure
+!backend/alembic/
+!backend/alembic.ini
+!backend/alembic/script.py.mako
+
+# Ignore generated migration version files (developers will create fresh ones)
+backend/alembic/versions/
+backend/alembic/versions/*.py
+!backend/alembic/versions/__init__.py
+
+# Ignore Alembic cache
+backend/alembic/**/__pycache__/
+backend/alembic/**/*.pyc
+
+
+# =========================================================
+# NODE / REACT / VITE FRONTEND
+# =========================================================
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Build output
+dist/
+frontend/dist/
+build/
+frontend/build/
+
+# Vite cache
+.vite/
+frontend/.vite/
+
+# Package manager debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager cache
+.pnpm-store/
+.npm/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# React/Vite local files
+frontend/.eslintcache
+frontend/.parcel-cache/
+
+
+# =========================================================
+# FRONTEND TEST / COVERAGE
+# =========================================================
+
+frontend/coverage/
+frontend/.nyc_output/
+.nyc_output/
+
+
+# =========================================================
+# IDE / EDITOR FILES
+# =========================================================
+
+.vscode/
+.idea/
+
+*.swp
+*.swo
+*.swn
+
+# VS Code local settings only
+*.code-workspace
+
+
+# =========================================================
+# OS FILES
+# =========================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+
+# =========================================================
+# JUPYTER / NOTEBOOK
+# =========================================================
+
+.ipynb_checkpoints/
+
+
+# =========================================================
+# TEMPORARY / BACKUP FILES
+# =========================================================
+
+tmp/
+temp/
+backend/tmp/
+backend/temp/
+frontend/tmp/
+frontend/temp/
+
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+
+
+# =========================================================
+# CACHE FOLDERS
+# =========================================================
+
+.cache/
+backend/.cache/
+frontend/.cache/
+
+
+# =========================================================
+# MODEL / ML FILES
+# =========================================================
+
+# Large local model files
+*.pt
+*.pth
+*.onnx
+*.h5
+*.keras
+*.pkl
+*.joblib
+*.safetensors
+*.bin
+
+# models/
+# backend/models_cache/
+backend/model_cache/
+# model_cache/
+
+
+# =========================================================
+# HUGGING FACE / LANGCHAIN CACHE
+# =========================================================
+
+.huggingface/
+.cache/huggingface/
+backend/.huggingface/
+
+.langchain/
+backend/.langchain/
+
+
+# =========================================================
+# LOCAL GENERATED FILES
+# =========================================================
+
+# Local reports/exports
+reports/
+exports/
+backend/reports/
+backend/exports/
+
+# Generated screenshots/renders
+renders/
+_renders/
+backend/renders/
+backend/_renders/
+
+
+# =========================================================
+# KEEP THESE IMPORTANT FILES
+# =========================================================
+
+!.gitignore
+!README.md
+
+!backend/requirements.txt
+!backend/alembic.ini
+!backend/.env.example
+
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/yarn.lock
+!frontend/pnpm-lock.yaml
+!frontend/vite.config.js
+!frontend/tailwind.config.js
+!frontend/postcss.config.js
+!frontend/.env.example
